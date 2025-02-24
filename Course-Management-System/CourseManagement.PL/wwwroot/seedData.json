@@ -1,0 +1,134 @@
+{
+  "Categories": [
+    {
+      "Name": "Technology",
+      "ParentId": null
+    },
+    {
+      "Name": "Programming",
+      "ParentId": 1
+    },
+    {
+      "Name": "Web Development",
+      "ParentId": 2
+    },
+    {
+      "Name": "Data Science",
+      "ParentId": 1
+    },
+    {
+      "Name": "Machine Learning",
+      "ParentId": 4
+    },
+    {
+      "Name": "Cybersecurity",
+      "ParentId": 1
+    }
+  ],
+  "Trainers": [
+    {
+      "Name": "John Doe",
+      "Email": "john@example.com",
+      "Website": "https://johndoe.com",
+      "Description": "Web development expert"
+    },
+    {
+      "Name": "Jane Smith",
+      "Email": "jane@example.com",
+      "Website": "https://janesmith.com",
+      "Description": "Data science specialist"
+    },
+    {
+      "Name": "Michael Lee",
+      "Email": "michael@example.com",
+      "Website": "https://michaellee.com",
+      "Description": "Cybersecurity consultant"
+    }
+  ],
+  "Courses": [
+    {
+      "Name": "ASP.NET Core",
+      "CreationDate": "2025-02-23",
+      "CategoryName": "Web Development",
+      "TrainerEmail": "john@example.com",
+      "Description": "Learn to build web applications with ASP.NET"
+    },
+    {
+      "Name": "Python for Data Science",
+      "CreationDate": "2025-02-22",
+      "CategoryName": "Data Science",
+      "TrainerEmail": "jane@example.com",
+      "Description": "Master data science using Python"
+    },
+    {
+      "Name": "Ethical Hacking Basics",
+      "CreationDate": "2025-02-21",
+      "CategoryName": "Cybersecurity",
+      "TrainerEmail": "michael@example.com",
+      "Description": "Introduction to cybersecurity and hacking"
+    }
+  ],
+  "CourseLessons": [
+    {
+      "Title": "Introduction to ASP.NET Core",
+      "Order": 1,
+      "CourseName": "ASP.NET Core"
+    },
+    {
+      "Title": "Building Web APIs in ASP.NET Core",
+      "Order": 2,
+      "CourseName": "ASP.NET Core"
+    },
+    {
+      "Title": "Data Analysis with Pandas and NumPy",
+      "Order": 1,
+      "CourseName": "Python for Data Science"
+    },
+    {
+      "Title": "Supervised vs Unsupervised Learning",
+      "Order": 1,
+      "CourseName": "Ethical Hacking Basics"
+    }
+  ],
+
+  "Trainees": [
+    {
+      "Name": "Alice Johnson",
+      "Email": "alice@example.com",
+      "Password": "hashedpassword1",
+      "CreationDate": "2025-02-20",
+      "IsActive": true
+    },
+    {
+      "Name": "Bob Brown",
+      "Email": "bob@example.com",
+      "Password": "hashedpassword2",
+      "CreationDate": "2025-02-19",
+      "IsActive": true
+    }
+  ],
+  "TraineeCourses": [
+    {
+      "TraineeId": 1,
+      "CourseId": 1,
+      "RegistrationDate": "2025-02-23"
+    },
+    {
+      "TraineeId": 2,
+      "CourseId": 2,
+      "RegistrationDate": "2025-02-22"
+    }
+  ],
+  "Admins": [
+    {
+      "Name": "Admin User",
+      "Email": "admin@example.com",
+      "Password": "AdminPass123"
+    },
+    {
+      "Name": "Super Admin",
+      "Email": "superadmin@example.com",
+      "Password": "SuperPass456"
+    }
+  ]
+}
