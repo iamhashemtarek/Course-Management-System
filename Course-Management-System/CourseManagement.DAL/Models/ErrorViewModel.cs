@@ -1,4 +1,4 @@
-namespace CourseManagement.PL.Models
+namespace CourseManagement.DAL.Models
 {
     public class ErrorViewModel
     {

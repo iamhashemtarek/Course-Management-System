@@ -1,20 +1,33 @@
-using CourseManagement.PL.Models;
+using CourseManagement.BLL.Interfaces;
+using CourseManagement.BLL.Repositories;
+using CourseManagement.DAL.Data;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Logging;
 
 namespace CourseManagement.PL
 {
     public class Program
     {
-        public static void Main(string[] args)
+        public static  void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
-            builder.Services.AddDbContext<AppDbContext>(options =>options.UseSqlServer(builder.Configuration.GetConnectionString("Con")));
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
 
+            builder.Services.AddDbContext<CourseManagementDbContext>(options =>
+                options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+            builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
+
+
             var app = builder.Build();
+
+            using var Scope = app.Services.CreateScope();
+            var services = Scope.ServiceProvider;
+            var dbContext = services.GetRequiredService<CourseManagementDbContext>();
+            dbContext.Database.Migrate();   
+            CourseManagementDbContextSeed.Seed(dbContext);
+
             Console.WriteLine("?? Application Starting...");
 
 
@@ -23,24 +36,9 @@ namespace CourseManagement.PL
             {
                 app.UseExceptionHandler("/Home/Error");
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
-                app.UseHsts();
-            }
-            using (var scope = app.Services.CreateScope())
-            {
-                var serviceProvider = scope.ServiceProvider;
-
-                Console.WriteLine("? Attempting to Seed Database...");
-
-                try
-                {
-                    DbSeeder.SeedDatabase(serviceProvider);
-                    Console.WriteLine("? Database Seeding Completed!");
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine($"?? Seeding Failed: {ex.Message}");
-                }
-            }
+                //app.UseHsts();
+            }           
+            //app.UseStaticFiles();
 
             app.UseHttpsRedirection();
             app.UseRouting();

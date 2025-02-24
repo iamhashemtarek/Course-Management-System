@@ -1,12 +1,11 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
+using CourseManagement.DAL.Models;
 
-namespace CourseManagement.PL.Models
+namespace CourseManagement.DAL.Models
 {
-    public class TraineeCourse
+    public class TraineeCourse : ModelBase
     {
-        [Key]
-        public int Id { get; set; }
 
         [ForeignKey("Trainee")]
         public int TraineeId { get; set; }

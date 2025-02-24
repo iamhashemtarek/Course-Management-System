@@ -1,10 +1,17 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using CourseManagement.DAL.Models;
 
-namespace CourseManagement.PL.Models
+
+namespace CourseManagement.DAL.Data
 {
-    public class AppDbContext : DbContext
+    public class CourseManagementDbContext : DbContext
     {
-        public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
+        public CourseManagementDbContext(DbContextOptions<CourseManagementDbContext> options) : base(options) { }
 
         public DbSet<Course> Courses { get; set; }
         public DbSet<Category> Categories { get; set; }
@@ -13,6 +20,5 @@ namespace CourseManagement.PL.Models
         public DbSet<Trainee> Trainees { get; set; }
         public DbSet<Admin> Admins { get; set; }
         public DbSet<TraineeCourse> TraineeCourses { get; set; }
-
     }
 }

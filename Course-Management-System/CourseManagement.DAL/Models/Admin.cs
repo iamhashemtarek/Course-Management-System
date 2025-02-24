@@ -1,14 +1,11 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using CourseManagement.DAL.Models;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace CourseManagement.PL.Models
+namespace CourseManagement.DAL.Models
 {
-    public class Admin
+    public class Admin : ModelBase
     {
-        [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Id { get; set; }
-
         public string Name { get; set; }
         [Required, EmailAddress]
         public string Email { get; set; }

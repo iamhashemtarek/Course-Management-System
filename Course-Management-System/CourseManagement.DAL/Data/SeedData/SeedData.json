@@ -1,0 +1,120 @@
+{
+  "Admins": [
+    {
+      "Name": "Admin One",
+      "Email": "admin1@example.com",
+      "Password": "admin123"
+    },
+    {
+      "Name": "Admin Two",
+      "Email": "admin2@example.com",
+      "Password": "admin456"
+    }
+  ],
+  "Categories": [
+    {
+      "Name": "Programming",
+      "ParentId": null
+    },
+    {
+      "Name": "Web Development",
+      "ParentId": null
+    },
+    {
+      "Name": "Data Science",
+      "ParentId": null
+    }
+  ],
+  "Trainers": [
+    {
+      "Name": "John Doe",
+      "Email": "john.doe@example.com",
+      "Website": "https://johndoe.com",
+      "Description": "Experienced web developer."
+    },
+    {
+      "Name": "Jane Smith",
+      "Email": "jane.smith@example.com",
+      "Website": "https://janesmith.com",
+      "Description": "Data science expert."
+    }
+  ],
+  "Courses": [
+    {
+      "Name": "Introduction to Python",
+      "CategoryId": 1,
+      "TrainerId": 1,
+      "Description": "Learn the basics of Python programming."
+    },
+    {
+      "Name": "Advanced JavaScript",
+      "CategoryId": 2,
+      "TrainerId": 1,
+      "Description": "Deep dive into JavaScript and modern frameworks."
+    },
+    {
+      "Name": "Machine Learning Basics",
+      "CategoryId": 3,
+      "TrainerId": 2,
+      "Description": "Introduction to machine learning concepts."
+    }
+  ],
+  "CourseLessons": [
+    {
+      "Title": "Python Syntax",
+      "Order": 1,
+      "CourseId": 1
+    },
+    {
+      "Title": "Variables and Data Types",
+      "Order": 2,
+      "CourseId": 1
+    },
+    {
+      "Title": "JavaScript Functions",
+      "Order": 1,
+      "CourseId": 2
+    },
+    {
+      "Title": "DOM Manipulation",
+      "Order": 2,
+      "CourseId": 2
+    },
+    {
+      "Title": "Introduction to ML",
+      "Order": 1,
+      "CourseId": 3
+    },
+    {
+      "Title": "Supervised Learning",
+      "Order": 2,
+      "CourseId": 3
+    }
+  ],
+  "Trainees": [
+    {
+      "Name": "Alice Johnson",
+      "Email": "alice.johnson@example.com",
+      "Password": "alice123"
+    },
+    {
+      "Name": "Bob Brown",
+      "Email": "bob.brown@example.com",
+      "Password": "bob456"
+    }
+  ],
+  "TraineeCourses": [
+    {
+      "TraineeId": 1,
+      "CourseId": 1
+    },
+    {
+      "TraineeId": 1,
+      "CourseId": 2
+    },
+    {
+      "TraineeId": 2,
+      "CourseId": 3
+    }
+  ]
+}

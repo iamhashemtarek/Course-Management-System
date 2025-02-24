@@ -1,14 +1,12 @@
-﻿using System;
+﻿using CourseManagement.DAL.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-namespace CourseManagement.PL.Models
+namespace CourseManagement.DAL.Models
 {
-    public class Course
+    public class Course : ModelBase
     {
-        [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Id { get; set; }
 
         [Required]
         public string Name { get; set; }

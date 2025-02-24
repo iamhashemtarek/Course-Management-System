@@ -1,13 +1,11 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
+using CourseManagement.DAL.Models;
 
-namespace CourseManagement.PL.Models
+namespace CourseManagement.DAL.Models
 {
-    public class Category
+    public class Category : ModelBase
     {
-        [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Id { get; set; }
 
         [Required]
         public string Name { get; set; }
